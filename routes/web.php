@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;    
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\BatchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,5 +54,17 @@ Route::get('/{id?}', [CourseController::class,'show']);
 Route::get('/{id?}/edit', [CourseController::class,'edit']);
 Route::patch('/{id?}', [CourseController::class,'update']);
 Route::delete('/{id?}', [CourseController::class,'destroy']);
+});
+
+
+//group routing
+Route::group(['prefix' => '/batches'], function () {
+Route::get('', [BatchController::class,'index']);
+Route::get('/create', [BatchController::class,'create']);
+Route::post('', [BatchController::class,'store']);
+Route::get('/{id?}', [BatchController::class,'show']);
+Route::get('/{id?}/edit', [BatchController::class,'edit']);
+Route::patch('/{id?}', [BatchController::class,'update']);
+Route::delete('/{id?}', [BatchController::class,'destroy']);
 });
 

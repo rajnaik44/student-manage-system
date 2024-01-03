@@ -36,6 +36,7 @@
   <a href="/students" class="w3-bar-item w3-button">Student</a>
   <a href="/teachers" class="w3-bar-item w3-button">Teacher</a>
   <a href="/courses" class="w3-bar-item w3-button">Courses</a>
+  <a href="/batches" class="w3-bar-item w3-button">Batches</a>
   <a href="/enrollment" class="w3-bar-item w3-button">Enrollment</a>
   <a href="/payment" class="w3-bar-item w3-button">Payment</a>
 </div>
