@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TeacherController;    
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +19,27 @@ Route::get('/', function () {
     return view('layout');
 });
 
-Route::get('/students', [StudentController::class,'index']);
-Route::get('/students/create', [StudentController::class,'create']);
-Route::post('/students', [StudentController::class,'store']);
-Route::get('/students/{id?}', [StudentController::class,'show']);
-Route::get('/students/{id?}/edit', [StudentController::class,'edit']);
-Route::patch('/students/{id?}', [StudentController::class,'update']);
-Route::delete('/students/{id?}', [StudentController::class,'destroy']);
+
+//group routing
+Route::group(['prefix' => '/students'], function () {
+Route::get('', [StudentController::class,'index']);
+Route::get('/create', [StudentController::class,'create']);
+Route::post('', [StudentController::class,'store']);
+Route::get('/{id?}', [StudentController::class,'show']);
+Route::get('/{id?}/edit', [StudentController::class,'edit']);
+Route::patch('/{id?}', [StudentController::class,'update']);
+Route::delete('/{id?}', [StudentController::class,'destroy']);
+});
+
+
+
+//group routing
+Route::group(['prefix' => '/teachers'], function () {
+Route::get('', [TeacherController::class,'index']);
+Route::get('/create', [TeacherController::class,'create']);
+Route::post('', [TeacherController::class,'store']);
+Route::get('/{id?}', [TeacherController::class,'show']);
+Route::get('/{id?}/edit', [TeacherController::class,'edit']);
+Route::patch('/{id?}', [TeacherController::class,'update']);
+Route::delete('/{id?}', [TeacherController::class,'destroy']);
+});
