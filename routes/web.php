@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;    
+use App\Http\Controllers\CourseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +33,6 @@ Route::delete('/{id?}', [StudentController::class,'destroy']);
 });
 
 
-
 //group routing
 Route::group(['prefix' => '/teachers'], function () {
 Route::get('', [TeacherController::class,'index']);
@@ -43,3 +43,15 @@ Route::get('/{id?}/edit', [TeacherController::class,'edit']);
 Route::patch('/{id?}', [TeacherController::class,'update']);
 Route::delete('/{id?}', [TeacherController::class,'destroy']);
 });
+
+//group routing
+Route::group(['prefix' => '/courses'], function () {
+Route::get('', [CourseController::class,'index']);
+Route::get('/create', [CourseController::class,'create']);
+Route::post('', [CourseController::class,'store']);
+Route::get('/{id?}', [CourseController::class,'show']);
+Route::get('/{id?}/edit', [CourseController::class,'edit']);
+Route::patch('/{id?}', [CourseController::class,'update']);
+Route::delete('/{id?}', [CourseController::class,'destroy']);
+});
+
