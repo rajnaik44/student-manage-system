@@ -32,12 +32,12 @@
     <div class="row ">
         <div class="col-md-3">
         <div class="w3-sidebar w3-bar-block" style="width:25%">
-  <a href="#" class="w3-bar-item w3-button active">Home</a>
-  <a href="#" class="w3-bar-item w3-button">Student</a>
-  <a href="#" class="w3-bar-item w3-button">Teacher</a>
-  <a href="#" class="w3-bar-item w3-button">Courses</a>
-  <a href="#" class="w3-bar-item w3-button">Enrollment</a>
-  <a href="#" class="w3-bar-item w3-button">Payment</a>
+  <a href="/" class="w3-bar-item w3-button ">Home</a>
+  <a href="/students" class="w3-bar-item w3-button">Student</a>
+  <a href="/teacher" class="w3-bar-item w3-button">Teacher</a>
+  <a href="/courses" class="w3-bar-item w3-button">Courses</a>
+  <a href="/enrollment" class="w3-bar-item w3-button">Enrollment</a>
+  <a href="/payment" class="w3-bar-item w3-button">Payment</a>
 </div>
         </div>
     </div>
