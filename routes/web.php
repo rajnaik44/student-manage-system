@@ -5,6 +5,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;    
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\BatchController;
+use App\Http\Controllers\EnrollmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,5 +67,16 @@ Route::get('/{id?}', [BatchController::class,'show']);
 Route::get('/{id?}/edit', [BatchController::class,'edit']);
 Route::patch('/{id?}', [BatchController::class,'update']);
 Route::delete('/{id?}', [BatchController::class,'destroy']);
+});
+
+//group routing
+Route::group(['prefix' => '/enrollments'], function () {
+Route::get('', [EnrollmentController::class,'index']);
+Route::get('/create', [EnrollmentController::class,'create']);
+Route::post('', [EnrollmentController::class,'store']);
+Route::get('/{id?}', [EnrollmentController::class,'show']);
+Route::get('/{id?}/edit', [EnrollmentController::class,'edit']);
+Route::patch('/{id?}', [EnrollmentController::class,'update']);
+Route::delete('/{id?}', [EnrollmentController::class,'destroy']);
 });
 
