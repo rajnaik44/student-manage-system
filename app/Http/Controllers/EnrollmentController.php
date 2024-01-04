@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Enrollment;
+use App\Models\Course;
 use Illuminate\Http\Response;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
@@ -24,7 +25,11 @@ class EnrollmentController extends Controller
      */
     public function create() : View
     {
-        return view("enrollments.create");
+        // return view("enrollments.create");
+
+        //linking to couses to diplay on the page
+        $courses = Course::pluck("name" , "id");
+        return view("enrollments.create", compact("courses"));
     }
 
     /**

@@ -15,4 +15,9 @@ class Course extends Model
         'duration',
     ];
     use HasFactory;
+
+    //to changet the display to montshs in duraton field
+    public function duration(){
+        return $this->duration." months";
+    }
 }
